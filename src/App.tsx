@@ -1,6 +1,7 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import { BoxGeometry, MeshBasicMaterial } from "three";
+import { Environment, OrbitControls } from "@react-three/drei";
+import Rock from "./components/Rock";
+
 function App() {
   return (
     <Canvas
@@ -9,11 +10,11 @@ function App() {
         fov: 60,
       }}
     >
-      <OrbitControls />
-      <mesh
-        geometry={new BoxGeometry(1, 1, 1)}
-        material={new MeshBasicMaterial()}
-      />
+      <ambientLight intensity={0.5} />
+      <pointLight position={[10, 10, 10]} />
+      <Rock scale={0.5} position={[0, -1, 0]} />
+      <OrbitControls enableZoom={true} />
+      <Environment preset="sunset" background />
     </Canvas>
   );
 }

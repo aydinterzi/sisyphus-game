@@ -1,6 +1,7 @@
 import { RigidBody } from "@react-three/rapier";
 import Rock from "../components/Rock";
 import Player from "./Player";
+import Ramp from "./Ramp";
 
 export default function Game() {
   return (
@@ -13,8 +14,7 @@ export default function Game() {
           <meshStandardMaterial color={"#306030"} />
         </mesh>
       </RigidBody>
-
-      <Player />
+      <Ramp />
 
       <RigidBody position={[2, 4, 0]}>
         <Rock scale={0.5} position={[0, -1, 0]} />

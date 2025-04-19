@@ -13,6 +13,7 @@ function App() {
         { name: "leftward", keys: ["ArrowLeft", "KeyA"] },
         { name: "rightward", keys: ["ArrowRight", "KeyD"] },
         { name: "jump", keys: ["Space"] },
+        { name: "dash", keys: ["ShiftLeft", "ShiftRight"] },
       ]}
     >
       <Canvas
@@ -22,7 +23,7 @@ function App() {
         }}
       >
         <Suspense>
-          <Physics>
+          <Physics debug>
             <ambientLight intensity={0.5} />
             <pointLight position={[10, 10, 10]} />
             <Game />

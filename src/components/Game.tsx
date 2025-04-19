@@ -14,9 +14,11 @@ export default function Game() {
           <meshStandardMaterial color={"#306030"} />
         </mesh>
       </RigidBody>
-      <Ramp />
-
-      <RigidBody position={[2, 4, 0]}>
+      <RigidBody colliders="hull" type="fixed">
+        <Ramp />
+      </RigidBody>
+      <Player />
+      <RigidBody colliders="hull" position={[2, 4, 0]}>
         <Rock scale={0.5} position={[0, -1, 0]} />
       </RigidBody>
     </>
